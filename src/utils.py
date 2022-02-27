@@ -89,7 +89,9 @@ def l_tilde(l : ArrayLike):
 
 def DT_tilde_pair(a : int, b : int, l : ArrayLike, DT : ArrayLike):
     """
-    DT_tilde_pair works as l_tilde_pair, just on the DT observable.
+    DT_tilde_pair computes the quantity DT_tilde as needed under the
+    square root in equation (3) of the reference paper, for a pair of
+    alternatives.
 
     Args:
         a -> first choice alternative of interest (int)
@@ -97,8 +99,7 @@ def DT_tilde_pair(a : int, b : int, l : ArrayLike, DT : ArrayLike):
         l -> log-odds matrix (np.ndarray of size NxN)
         DT -> observed decision times (np.ndarray of size NxN)
     Returns:
-        ... -> ...
-        SPIEGARE BENE QUI
+        res -> DT_tilde for the pair (a,b)
     """
     A_l = (l > -np.Inf)
     A_dt = (DT < np.Inf)
@@ -120,14 +121,15 @@ def DT_tilde_pair(a : int, b : int, l : ArrayLike, DT : ArrayLike):
 
 def DT_tilde(l : ArrayLike, DT : ArrayLike):
     """
-    DT_tilde works as l_tilde, just on the DT observable.
+    DT_tilde computes the quantity DT_tilde as needed under the
+    square root in equation (3) of the reference paper.
 
     Args:
         l -> log-odds matrix (np.ndarray of size NxN)
         DT -> observed decision times (np.ndarray of size NxN)
     Returns:
-        ... -> ...
-        SPIEGARE BENE QUI
+        DT_t -> DT_tilde for all the possible pair of alternatives
+                (np.ndarray of size NxN)
     """
     n = np.shape(DT)[0]
     DT_t = np.Inf * np.ones([n,n])
