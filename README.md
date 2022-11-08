@@ -1,5 +1,5 @@
 # LtDS-DDM
-This repository contains the code used in "Letting the data speak for value in the Decision Diffusion Model" by ...
+This repository contains the code used in “Measuring utility with diffusion models.” by Berlinghieri, R., Krajbich, I., Maccheroni, F., Marinacci, M., and Pirazzini, M., currently under review. 
 
 The structure of the repository is as follows:
 - The folder "Data" contains the data used in our experiments, in the desired format (.npz). These datasets represent the observed choice probabilities and decision times for the two datasets of interest, i.e. the ones used in Cavanagh et al. (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114997/) and Shevlin (https://www.pnas.org/content/119/6/e2101508119).
